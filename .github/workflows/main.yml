@@ -14,3 +14,12 @@ jobs:
       with:
         username: ${{secrets.DOCKERHUB_USERNAME}}
         password: ${{secrets.DOCKERHUB_TOKEN}}
+    -  name: Buildando image e enviando para o docker hub
+       uses: docker/build-push-action@v6
+       with:
+        context: ./src
+        file: ./src/Dockerfile
+        push: true
+        tags: | 
+          leandromelo99/aula-primeira-pipeline:v${{github.run_number}}
+          leandromelo99/aula-primeira-pipeline:latest
