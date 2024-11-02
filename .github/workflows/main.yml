@@ -39,6 +39,6 @@ jobs:
       with:
        namespace: 'myapp'
        manifests: |
-         .k8s/deployment.yaml
+         ./k8s/deployment.yaml
        images: |
         'leandromelo99/aula-primeira-pipeline:v${{github.run_number}}'
